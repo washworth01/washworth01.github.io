@@ -122,6 +122,35 @@ dt {
   font-weight: 700;
 }
 
+#horizontal-menu ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color:#6699ff; 
+		}
+		
+#horizontal-menu li {
+			float: left;
+			border-right:1px solid #bbb;
+		}
+		
+#horizontal-menu li:last-child {
+		border-right: none;
+		}
+
+#horizontal-menu li a {
+			display: block;
+			colour: black;
+			text-align: center;
+			padding: 8px;
+			text-decoration: none;
+		}
+		
+#horizontal-menu li a:hover {
+			background-color:#6699ff; 
+		}
+
 dd {
   margin-bottom: .5rem;
   margin-left: 0;
@@ -419,7 +448,34 @@ h6, .h6 {
   font-weight: 300;
   line-height: 1.2;
 }
+horizontal-menu{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-colour: #303030;
+		}
+		
+		li {
+			float: left;
+			border-right:1px solid #bbb;
+		}
+		
+		li:last-child {
+		border-right: none;
+		}
 
+		li a {
+			display: block;
+			colour: white;
+			text-align: center;
+			padding: 8px;
+			text-decoration: none;
+		}
+		
+		li a:hover {
+			background-color:#6699ff; 
+		}
 hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -6097,8 +6153,8 @@ button.bg-light:focus {
   background-color: #DFF388 !important;
 }
 
-.bg-yellow{
-	background-color: #DDFC56 !important;
+.bg-yellow {
+  background-color: #DDFC56 !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,

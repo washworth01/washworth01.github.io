@@ -1,12 +1,22 @@
 <html>
     <html>
         <head>
-            <title>filmsTable</title>
-        </head>
-		
-padding-top:75px;
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+
+  </head>
+		<body>
+		padding-top: 65px; 
+		<nav class="navbar navbar-expand-lg navbar-dark bg-blue fixed-top">
       <div class="container">
 		<img src="blockbuster_logo.png" align="top|middle" style="width:200px;height:75px">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +25,7 @@ padding-top:75px;
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="index.html">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -32,25 +42,72 @@ padding-top:75px;
         </div>
       </div>
     </nav>
-
-            <input type="button" id="all" value="All" onclick="getByCategory(this.id);"
-            <input type="button" id="action" value="Action" onclick="getByCategory(this.id);">
-            <input type="button" id="animation" value="Animation" onclick="getByCategory(this.id);">
-            <input type="button" id="children" value="Children" onclick="getByCategory(this.id);">
-            <input type="button" id="classics" value="Classics" onclick="getByCategory(this.id);">
-            <input type="button" id="comedy" value="Comedy" onclick="getByCategory(this.id);">
-            <input type="button" id="documentary" value="Documentary" onclick="getByCategory(this.id);">
-            <input type="button" id="drama" value="Drama" onclick="getByCategory(this.id);">
-            <input type="button" id="family" value="Family" onclick="getByCategory(this.id);">
-            <input type="button" id="foreign" value="Foreign" onclick="getByCategory(this.id);">
-            <input type="button" id="games" value="Games" onclick="getByCategory(this.id);">
-            <input type="button" id="horror" value="Horror" onclick="getByCategory(this.id);">
-            <input type="button" id="music" value="Music" onclick="getByCategory(this.id);">
-            <input type="button" id="new" value="New" onclick="getByCategory(this.id);">
-            <input type="button" id="sci-fi" value="Sci-Fi" onclick="getByCategory(this.id);">
-            <input type="button" id="sports" value="Sports" onclick="getByCategory(this.id);">
-            <input type="button" id="travel" value="Travel" onclick="getByCategory(this.id);">
-            <p id = "table"></p>
+		<div class="horizontal-menu">
+			<a id="all" href=# onclick="getByCategory(this.id);return false;">All</a>
+			<a id="action" href=# onclick="getByCategory(this.id);return false;">Action</a>
+			<a id="animation" href=# onclick="getByCategory(this.id);return false;">Animation</a>
+			<a id="children" href=# onclick="getByCategory(this.id);return false;">Children</a>
+			<a id="classics" href=# onclick="getByCategory(this.id);return false;">Classics</a>
+			<a id="comedy" href=# onclick="getByCategory(this.id);return false;">Comedy</a>
+			<a id="documentary" href=# onclick="getByCategory(this.id);return false;">Documentary</a>
+			<a id="drama" href=# onclick="getByCategory(this.id);return false;">Drama</a>
+			<a id="family" href=# onclick="getByCategory(this.id);return false;">Family</a>
+			<a id="foreign" href=# onclick="getByCategory(this.id);return false;">Foreign</a>
+			<a id="games" href=# onclick="getByCategory(this.id);return false;">Games</a>
+			<a id="horror" href=# onclick="getByCategory(this.id);return false;">Horror</a>
+			<a id="music" href=# onclick="getByCategory(this.id);return false;">Music</a>
+			<a id="new" href=# onclick="getByCategory(this.id);return false;">New</a>
+			<a id="sci-fi" href=# onclick="getByCategory(this.id);return false;">Sci-Fi</a>
+			<a id="sports" href=# onclick="getByCategory(this.id);return false;">Sports</a>
+			<a id="travel" href=# onclick="getByCategory(this.id);return false;">Travel</a>
+      <input type="text" id="search" placeholder="Search..."></input>
+      <input type="button" id="find" value="Search" onclick="findByTitle();" />
+    </div>
+	<div id = pageTitle>
+		<h1>Films List</h1>
+	</div>
+    <div class="vertical-menu">
+      <h2>Filters</h2>
+      <h3>Age Ratings</h3>
+	  <ul>
+		<li><input type = "checkbox" name="R">R</input></li>
+		<li><input type="checkbox" name="NC-17">NC-17</input></li>
+		<li><input type="checkbox" name="NC-17">PG-13</input></li>
+		<li><input type="checkbox" name="NC-17">PG</input></li>
+		<li><input type="checkbox" name="NC-17">G</input></li>
+	  </ul>
+		</div>
+    <div class="listings">
+			<table id = "filmList"></table>
+		</div>
+		
+		<div>
+			<!-- Pagination -->
+      <ul class="pagination justify-content-center">      
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous" onclick="previousPage();return false;">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next"onclick=" nextPage();return false;">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+		</div>
+		  <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+	 
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
             <script src=filmsTable.js></script>
         </body>
     </html>
