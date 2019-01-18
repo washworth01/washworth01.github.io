@@ -1,5 +1,5 @@
 let search;
-let requestURL = "http://127.0.0.1:8080/api/film"
+let requestURL = "http://192.168.1.119:8080/api/film"
 let request = new XMLHttpRequest();
 request.open("GET", requestURL);
 request.setRequestHeader('Content-type', 'application/json');
@@ -58,10 +58,10 @@ function loadTable()
 function getByCategory(cat){
     if (cat == "all")
     {
-        requestURL = "http://127.0.0.1:8080/api/film";
+        requestURL = "http://192.168.1.119:8080/api/film";
     }
     else{
-        requestURL = "http://127.0.0.1:8080/api/film/category/" + cat;
+        requestURL = "http://192.168.1.119:8080/api/film/category/" + cat;
     }
 	page = 1;
     getData();
